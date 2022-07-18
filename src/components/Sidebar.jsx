@@ -6,8 +6,6 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { links } from '../data/dummy.js';
 
 const Sidebar = () => {
-  const activeLink = '';
-  const normalLink = '';
   let activeMenu = true;
 
   return (
@@ -38,12 +36,13 @@ const Sidebar = () => {
                       to={`/${link.name}`}
                       key={link.name}
                       onClick={() => {}}
-                      className={(isActive) =>
+                      className={({ isActive }) =>
                         `flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 ${
                           isActive ? 'text-white' : 'text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray'
                         }`
                       }>
-                      {link.icon} <span className='capitalize'>{link.name}</span>
+                      {link.icon}
+                      <span className='capitalize'>{link.name}</span>
                     </NavLink>
                   ))}
                 </div>
