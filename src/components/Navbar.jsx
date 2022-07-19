@@ -34,13 +34,19 @@ const Navbar = () => {
             title='Menu'
             customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
             icon={<AiOutlineMenu />}
-            color='blue'
-            dotColor='black'
+            color=''
+            dotColor=''
           />
 
           <div className='flex'>
-            <NavButton title='' customFunc={() => {}} icon='' color='' dotColor='' />
-            <NavButton title='' customFunc={() => {}} icon='' color='' dotColor='' />
+            <NavButton title='Cart' customFunc={() => handleClick('cart')} icon={<FiShoppingCart />} color='' />
+            <NavButton title='Chat' customFunc={() => handleClick('chat')} icon={<BsChatLeft />} color='' dotColor='#03C9D7' />
+            <NavButton title='Notifications' customFunc={() => handleClick('notification')} icon={<RiNotification3Line />} color='' dotColor='' />
+            <TooltipComponent content='Profile' position='BottomCenter'>
+              <div className='flex item-center gap-2 cursor-pointer p-1 hover:bg-flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg' onClick={() => handleClick('userProfile')}>
+                <img />
+              </div>
+            </TooltipComponent>
           </div>
         </div>
       </div>
