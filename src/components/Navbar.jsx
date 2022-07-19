@@ -24,7 +24,24 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+
+  // screen size
+  useEffect(() => {
+    // function to set/change screenSize context
+    const handleResize = () => setScreenSize(window.innerWidth);
+    // add event listener for window size changing
+    window.addEventListener('resize', handleResize);
+    // call the handleResize on page load initially to get the initial size
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // to close the sidebar on small screens/devices
+  useEffect(() => {
+    if (screenSize <= 900) setActiveMenu(false);
+    else setActiveMenu(true);
+  }, [screenSize])
 
   return (
     <div id='navbar' className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
