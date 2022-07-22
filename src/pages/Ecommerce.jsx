@@ -77,7 +77,9 @@ const Ecommerce = () => {
               <div>
                 <p>
                   <span className='text-3xl font-semibold'>$93,438</span>
-                  <span className='p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs'>23%</span>
+                  <span className='p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs'>
+                    23%
+                  </span>
                 </p>
                 <p className='text-gray-500 mt-1'>Budget</p>
               </div>
@@ -88,10 +90,26 @@ const Ecommerce = () => {
                 <p className='text-gray-500 mt-1'>Expense</p>
               </div>
 
-              {/* Revenue graph */}
+              {/* Revenue graph (sparkline) */}
               <div className='mt-5'>
-                <SparkLine currentColor='blue' id='line-sparkLine' type='Line' height='80px' width='250px' data={SparklineAreaData} color='' />
+                <SparkLine
+                  currentColor='blue'
+                  id='line-sparkLine'
+                  type='Line'
+                  height='80px'
+                  width='250px'
+                  data={SparklineAreaData}
+                  color='green'
+                />
               </div>
+              <div className='mt-10'>
+                <Button color='white' bgColor='blue' text='Download Report' borderRadius='10px' />
+              </div>
+            </div>
+
+            {/* Revenue graph () */}
+            <div>
+              <Stacked currentMode='blue' width='320px' height='360px' />
             </div>
           </div>
         </div>
