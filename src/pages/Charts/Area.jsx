@@ -9,7 +9,7 @@ const Area = () => {
   const { chartStyles } = useStateContext();
 
   return (
-    <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
+    <div id='area-chart-page' className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
       <Header category='Chart' title='Area' subtitle='Inflation Rate in percentage' />
       <div className='w-full'>
         <ChartComponent

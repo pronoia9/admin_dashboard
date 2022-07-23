@@ -7,6 +7,7 @@ const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, 
 
   return (
     <button
+      id='button-component'
       type='button'
       onClick={() => setIsClicked(initialState)}
       style={{ backgroundColor: bgColor, color, borderRadius }}

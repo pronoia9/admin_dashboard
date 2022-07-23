@@ -9,7 +9,7 @@ const Orders = () => {
   const { chartStyles } = useStateContext();
 
   return (
-    <div className='m-2 md:m-10 mt-24 p-2 md:p-10 dark:bg-secondary-dark-bg bg-white rounded-3xl'>
+    <div id='orders-page' className='m-2 md:m-10 mt-24 p-2 md:p-10 dark:bg-secondary-dark-bg bg-white rounded-3xl'>
       <Header category='Page' title='Orders' />
       <GridComponent
         id='gridcomp'
