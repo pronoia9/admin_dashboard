@@ -5,12 +5,7 @@ import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '.
 import { useStateContext } from '../../contexts/ContextProvider';
 
 const Stacked = ({ width, height }) => {
-  const { currentMode, currentColor } = useStateContext();
-
-  // color customization
-  const palette = [currentColor, `${currentMode === 'Dark' ? '#555' : '#404041'}`];
-  const background = currentMode === 'Dark' ? '#33373E' : '#fff';
-  const font = { color: `${currentMode === 'Dark' ? '#fff' : '#33373E'}` };
+  const { chartStyles } = useStateContext();
 
   return (
     <ChartComponent
@@ -21,18 +16,15 @@ const Stacked = ({ width, height }) => {
       height={height}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
-      background={background}
-      palettes={palette}
-      legendSettings={{
-        background: background,
-        textStyle: font,
-      }}
+      background={chartStyles.background}
+      palettes={chartStyles.palette}
+      legendSettings={chartStyles.legendSettings}
       loaded={() => {
         let chart = document.getElementById('charts');
-        let legendSvg = chart.querySelectorAll('[id*="chart_legend_shape_"]');
-        for (let i = 0; i < legendSvg.length; i++) {
-          // change the legends icon/shape as soon as theme color changes
-          legendSvg[i].setAttribute('stroke', palette[i]);
+        let legendShape = chart.querySelectorAll('[id*="chart_legend_shape_"]');
+        for (let i = 0; i < legendShape.length; i++) {
+          legendShape[i].setAttribute('fill', chartStyles.palette[i]);
+          legendShape[i].setAttribute('stroke', chartStyles.palette[i]);
         }
       }}>
       <Inject services={[StackingColumnSeries, Category, Legend, Tooltip]} />
