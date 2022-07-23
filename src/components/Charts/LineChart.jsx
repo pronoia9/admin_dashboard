@@ -5,7 +5,7 @@ import { lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from '../../data
 import { useStateContext } from '../../contexts/ContextProvider';
 
 const LineChart = () => {
-  const { currentMode } = useStateContext();
+  const { chartStyles } = useStateContext();
 
   return (
     <ChartComponent
@@ -15,13 +15,11 @@ const LineChart = () => {
       primaryYAxis={LinePrimaryYAxis}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
-      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
-      legendSettings={{ background: 'white' }}>
+      background={chartStyles.background}
+      legendSettings={chartStyles.legendSettings}>
       <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
       <SeriesCollectionDirective>
-        {lineCustomSeries.map((item, index) => (
-          <SeriesDirective key={index} {...item} />
-        ))}
+        {lineCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
       </SeriesCollectionDirective>
     </ChartComponent>
   );
