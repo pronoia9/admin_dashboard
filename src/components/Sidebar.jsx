@@ -8,14 +8,14 @@ import { links } from '../data/dummy.js';
 import { useStateContext } from '../contexts/ContextProvider.js';
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext();
 
   const handleCloseSidebar = () => {
     if (activeMenu && screenSize <= 900) setActiveMenu(false);
   };
 
   return (
-    <div className={`dark:bg-secondary-dark-bg ${activeMenu ? 'w-72 fixed sidebar bg-white' : 'w-0'}`}>
+    <div id='sidebar-component' className={`dark:bg-secondary-dark-bg ${activeMenu ? 'w-72 fixed sidebar bg-white' : 'w-0'}`}>
       <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
         {activeMenu && (
           <>
@@ -45,11 +45,8 @@ const Sidebar = () => {
                       to={`/${link.name}`}
                       key={link.name}
                       onClick={handleCloseSidebar}
-                      className={({ isActive }) =>
-                        `flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 ${
-                          isActive ? 'text-white' : 'text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray'
-                        }`
-                      }>
+                      style={({ isActive }) => ({ backgroundColor: isActive ? currentColor : '' })}
+                      className={({ isActive }) => `flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md m-2 ${isActive ? 'text-white' : 'text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray'}`}>
                       {link.icon}
                       <span className='capitalize'>{link.name}</span>
                     </NavLink>
