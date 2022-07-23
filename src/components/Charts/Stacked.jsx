@@ -7,6 +7,11 @@ import { useStateContext } from '../../contexts/ContextProvider';
 const Stacked = ({ width, height }) => {
   const { currentMode, currentColor } = useStateContext();
 
+  // color customization
+  const palette = [currentColor, `${currentMode === 'Dark' ? '#555' : '#404041'}`];
+  const background = currentMode === 'Dark' ? '#33373E' : '#fff';
+  const font = { color: `${currentMode === 'Dark' ? '#fff' : '#33373E'}` };
+
   return (
     <ChartComponent
       id='charts'
@@ -16,14 +21,23 @@ const Stacked = ({ width, height }) => {
       height={height}
       chartArea={{ border: { width: 0 } }}
       tooltip={{ enable: true }}
-      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
-      palettes={[currentColor, '#404041']}
-      legendSettings={{ background: 'white' }}>
+      background={background}
+      palettes={palette}
+      legendSettings={{
+        background: background,
+        textStyle: font,
+      }}
+      loaded={() => {
+        let chart = document.getElementById('charts');
+        let legendSvg = chart.querySelectorAll('[id*="chart_legend_shape_"]');
+        for (let i = 0; i < legendSvg.length; i++) {
+          // change the legends icon/shape as soon as theme color changes
+          legendSvg[i].setAttribute('stroke', palette[i]);
+        }
+      }}>
       <Inject services={[StackingColumnSeries, Category, Legend, Tooltip]} />
       <SeriesCollectionDirective>
-        {stackedCustomSeries.map((item, index) => (
-          <SeriesDirective key={index} {...item} />
-        ))}
+        {stackedCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
       </SeriesCollectionDirective>
     </ChartComponent>
   );
