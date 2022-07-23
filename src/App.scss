@@ -147,7 +147,7 @@
 
 .dark {
   .e-grid {
-    * {
+    *, span, svg {
       color: #fff !important;
       border-color: #555;
       border-color: #555;
@@ -180,6 +180,16 @@
       }
     }
 
+    .e-toolbar-items,
+    .e-tbar-pos {
+      background: #20232a;
+      input {
+        &::placeholder {
+          color: #fff;
+        }
+      }
+    }
+
     // header
     th {
       background: #20232a;
@@ -197,18 +207,26 @@
       }
     }
 
-    .e-row {
-      &.e-altrow {
-        background: #40454e;
-      }
+    tbody {
+      .e-row {
+        &.e-altrow {
+          background: #40454e;
+        }
 
-      .e-selectionbackground {
-        color: black !important;
-      }
-
-      &:hover {
-        td {
+        .e-selectionbackground {
           color: black !important;
+        }
+
+        &:hover {
+          * {
+            color: black !important;
+          }
+        }
+
+        .e-inline-edit {
+          * {
+            color: #fff !important;
+          }
         }
       }
     }
