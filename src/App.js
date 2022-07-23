@@ -10,7 +10,7 @@ import { useStateContext } from './contexts/ContextProvider';
 import './App.css';
 
 function App() {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
 
   return (
     <div>
@@ -21,7 +21,8 @@ function App() {
               <button
                 type='button'
                 className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
-                style={{ background: 'blue', borderRadius: '50%' }}>
+                style={{ background: 'blue', borderRadius: '50%' }}
+                onClick={() => setThemeSettings(true)}>
                 <FiSettings />
               </button>
             </TooltipComponent>
@@ -31,8 +32,8 @@ function App() {
           <div className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`}>
             <Navbar />
             <div>
-              <ThemeSettings />
-              
+              {themeSettings && <ThemeSettings />}
+
               <Routes>
                 {/* Dashboard */}
                 <Route path='/' element={<Ecommerce />} />
