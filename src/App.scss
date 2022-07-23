@@ -249,3 +249,65 @@
     }
   }
 }
+
+// calendar styles
+
+.dark {
+  #calendar-page {
+    * {
+      color: #fff;
+    }
+
+    .e-control,
+    .e-schedule,
+    .e-keyboard,
+    .e-toolbar,
+    .e-toolbar-left,
+    .e-toolbar-center,
+    .e-toolbar-right,
+    .e-toolbar-items,
+    .e-tbar-pos,
+    .e-time-slots,
+    .e-header-cells,
+    .e-disable-dates {
+      background: #20232a;
+    }
+
+    .e-work-cells,
+    .e-alternate-cells {
+      background: #33373e;
+      border-color: #999;
+    }
+
+    .e-time-slots {
+      border-color: #999;
+    }
+
+    .e-schedule-table {
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            td {
+              border-bottom-color: #00000000;
+            }
+          }
+        }
+      }
+    }
+
+    .mt-5 table tbody {
+      background: #33373e;
+      .e-float-input,
+      .e-control-wrapper,
+      .e-input-group,
+      .e-date-wrapper,
+      .e-valid-input,
+      .e-control,
+      .e-datepicker,
+      .e-lib,
+      .e-keyboard {
+        background: #33373e;
+      }
+    }
+  }
+}
