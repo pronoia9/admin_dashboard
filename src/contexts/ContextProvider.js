@@ -24,6 +24,9 @@ export const ContextProvider = ({ children }) => {
       background: `${currentMode === 'Dark' ? '#33373E' : '#fff'}`,
       textStyle: { color: `${currentMode === 'Dark' ? '#fff' : '#33373E'}` },
     },
+    axisStyles: {
+      titleStyle: { color: `${currentMode === 'Dark' ? '#888' : ''}` },
+    }
   });
 
   const setColor = (color) => {
@@ -42,6 +45,9 @@ export const ContextProvider = ({ children }) => {
       legendSettings: {
         background: `${mode === 'Dark' ? '#33373E' : '#fff'}`,
         textStyle: { color: `${mode === 'Dark' ? '#fff' : '#33373E'}` },
+      },
+      axisStyles: {
+        titleStyle: { color: `${mode === 'Dark' ? '#888' : ''}` }
       },
     }));
     localStorage.setItem('themeMode', e.target.value);
