@@ -6,11 +6,7 @@ import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data
 import { useStateContext } from '../../contexts/ContextProvider';
 
 const Area = () => {
-  const { currentMode } = useStateContext();
-
-  // color/theme customization
-  const background = currentMode === 'Dark' ? '#33373E' : '#fff';
-  const legendSettings = { background: background, textStyle: { color: `${currentMode === 'Dark' ? '#fff' : '#33373E'}` } };
+  const { chartStyles } = useStateContext();
 
   return (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
@@ -21,8 +17,8 @@ const Area = () => {
           primaryXAxis={areaPrimaryXAxis}
           primaryYAxis={areaPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
-          background={background}
-          legendSettings={legendSettings}>
+          background={chartStyles.background}
+          legendSettings={chartStyles.legendSettings}>
           <Inject services={[SplineAreaSeries, DateTime, Legend]} />
           <SeriesCollectionDirective>
             {areaCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
