@@ -6,11 +6,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { Header } from '../../components';
 
 const Pyramid = () => {
-  const { currentMode } = useStateContext();
-
-  // color customization
-  const background = currentMode === 'Dark' ? '#33373E' : '#fff';
-  const font = { color: `${currentMode === 'Dark' ? '#fff' : '#33373E'}` };
+  const { chartStyles } = useStateContext();
 
   return (
     <div className='m-4 md:m-10 mt-24  p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
@@ -18,12 +14,9 @@ const Pyramid = () => {
       <div className='w-full'>
         <AccumulationChartComponent
           id='pyramid-chart'
-          legendSettings={{
-            background: background,
-            textStyle: font,
-          }}
+          legendSettings={chartStyles.legendSettings}
           tooltip={{ enable: true }}
-          background={background}>
+          background={chartStyles.background}>
           <Inject services={[AccumulationDataLabel, AccumulationTooltip, PyramidSeries, AccumulationLegend, AccumulationSelection]} />
           <AccumulationSeriesCollectionDirective>
             <AccumulationSeriesDirective
