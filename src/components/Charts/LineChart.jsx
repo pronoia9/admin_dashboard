@@ -19,9 +19,7 @@ const LineChart = () => {
       legendSettings={chartStyles.legendSettings}>
       <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
       <SeriesCollectionDirective>
-        {lineCustomSeries.map((item, index) => (
-          <SeriesDirective key={index} {...item} />
-        ))}
+        {lineCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}
       </SeriesCollectionDirective>
     </ChartComponent>
   );
