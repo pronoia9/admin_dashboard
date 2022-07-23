@@ -145,9 +145,17 @@
 
 // grid styles
 
+// div {
+//   &.e-grid {
+//     border-radius: 1.5rem;
+//   }
+// }
+
 .dark {
   .e-grid {
-    *, span, svg {
+    *,
+    span,
+    svg {
       color: #fff !important;
       border-color: #555;
       border-color: #555;
@@ -158,44 +166,45 @@
 
     .e-table,
     .e-pager,
-    .e-pagercontainer {
+    .e-toolbar-items,
+    .e-tbar-pos,
+    .e-control,
+    .e-toolbar,
+    .e-lib,
+    .e-keyboard {
       background: #33373e;
     }
 
-    .e-gridpager {
-      .e-prevpagedisabled,
-      .e-prevpage,
-      .e-nextpage,
-      .e-nextpagedisabled,
-      .e-lastpagedisabled,
-      .e-lastpage,
-      .e-firstpage,
-      .e-firstpagedisabled,
-      .e-numericitem {
-        background: #33373e;
-      }
-
-      .e-currentitem {
-        background: #4b4d51;
+    input {
+      &::placeholder {
+        color: #fff;
       }
     }
 
+    th,
+    .e-gridpager,
+    .e-control,
+    .e-pager,
+    .e-lib,
+    .e-pagercontainer,
+    .e-prevpagedisabled,
+    .e-prevpage,
+    .e-nextpage,
+    .e-nextpagedisabled,
+    .e-lastpagedisabled,
+    .e-lastpage,
+    .e-firstpage,
+    .e-firstpagedisabled,
+    .e-numericitem,
     .e-toolbar-items,
     .e-tbar-pos {
       background: #20232a;
-      input {
-        &::placeholder {
-          color: #fff;
-        }
-      }
     }
 
-    // header
-    th {
-      background: #20232a;
+    .e-currentitem {
+      background: #4b4d51;
     }
 
-    // inline/row edit
     .e-inline-edit {
       col {
         background: #20232a;
@@ -217,8 +226,16 @@
           color: black !important;
         }
 
-        &:hover {
-          * {
+        &:hover,
+        &:focus,
+        &:target,
+        &:active,
+        [aria-selected='true'] {
+          background: whitesmoke;
+          *,
+          p,
+          span,
+          svg {
             color: black !important;
           }
         }
