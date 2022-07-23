@@ -9,6 +9,7 @@ const ThemeSettings = () => {
   return (
     <div id='theme_settings-component' className='bg-half-transparent w-screen fixed nav-item top-0 right-0'>
       <div className='float-right h-screen dark:text-gray-200  bg-white dark:bg-[#484B52] w-400'>
+        {/* header + close button */}
         <div className='flex justify-between items-center p-4 ml-4'>
           <p className='font-semibold text-lg'>Settings</p>
           <button
@@ -18,6 +19,21 @@ const ThemeSettings = () => {
             className='text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray'>
             <MdOutlineCancel />
           </button>
+        </div>
+
+        {/* theme options */}
+        <div className='flex-col border-t-1 border-color p-4 ml-4'>
+          <p className='font-semibold text-xl '>Theme Option</p>
+          {/* light mode */}
+          <div className='mt-4'>
+            <input type='radio' id='light' name='theme' value='Light' className='cursor-pointer' onChange={() => {}} checked={true} />
+            <label htmlFor='light' className='ml-2 text-md cursor-pointer'>Light</label>
+          </div>
+          {/* dark mode */}
+          <div className='mt-2'>
+            <input type='radio' id='dark' name='theme' value='Dark' onChange={() => {}} className='cursor-pointer' checked={false} />
+            <label htmlFor='dark' className='ml-2 text-md cursor-pointer'>Dark</label>
+          </div>
         </div>
       </div>
     </div>
