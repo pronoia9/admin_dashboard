@@ -1,3 +1,4 @@
+import { setChart } from '@syncfusion/ej2/spreadsheet';
 import React, { createContext, useContext, useState } from 'react';
 
 const StateContext = createContext();
@@ -16,25 +17,52 @@ export const ContextProvider = ({ children }) => {
   const [currentColor, setCurrentColor] = useState('#03C9D7');
   const [currentMode, setCurrentMode] = useState('Light');
   const [themeSettings, setThemeSettings] = useState(false);
+  const [chartStyles, setChartStyles] = useState({
+    palette: [currentColor, `${currentMode === 'Dark' ? '#555' : '#404041'}`],
+    background: `${currentMode === 'Dark' ? '#33373E' : '#fff'}`,
+    legendSettings: {
+      background: `${currentMode === 'Dark' ? '#33373E' : '#fff'}`,
+      textStyle: { color: `${currentMode === 'Dark' ? '#fff' : '#33373E'}` },
+    },
+  });
 
   const setColor = (color) => {
     setCurrentColor(color);
-    localStorage.setItem('color Mode', color);
+    setChartStyles((chartStyles) => ({...chartStyles, palette: [color, chartStyles.palette[1]]}))
+    localStorage.setItem('colorMode', color);
     setThemeSettings(false);
   };
 
   const setMode = (e) => {
-    setCurrentMode(e.target.value);
+    const mode = e.target.value;
+    setCurrentMode(mode);
+    setChartStyles((chartStyles) => ({
+      ...chartStyles,
+      background: `${mode === 'Dark' ? '#33373E' : '#fff'}`,
+      legendSettings: {
+        background: `${mode === 'Dark' ? '#33373E' : '#fff'}`,
+        textStyle: { color: `${mode === 'Dark' ? '#fff' : '#33373E'}` },
+      },
+    }));
     localStorage.setItem('themeMode', e.target.value);
     setThemeSettings(false);
-  }
+  };
 
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
   };
 
   return (
-    <StateContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor, setCurrentColor, setColor, currentMode, setCurrentMode, setMode, themeSettings, setThemeSettings }}>
+    <StateContext.Provider
+      value={{
+        activeMenu, setActiveMenu,
+        isClicked, setIsClicked, handleClick,
+        screenSize, setScreenSize,
+        currentColor, setCurrentColor, setColor,
+        currentMode, setCurrentMode, setMode,
+        themeSettings, setThemeSettings,
+        chartStyles, setChartStyles,
+      }}>
       {children}
     </StateContext.Provider>
   );
