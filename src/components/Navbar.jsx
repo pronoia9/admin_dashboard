@@ -24,7 +24,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentMode, currentColor } = useStateContext();
 
   // screen size
   useEffect(() => {
@@ -46,24 +46,12 @@ const Navbar = () => {
   return (
     <div id='navbar' className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
       <div className='flex justify-between p-2 md:ml-6 md:mr-6 relative'>
-        <NavButton
-          title='Menu'
-          customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
-          icon={<AiOutlineMenu />}
-          color=''
-          dotColor=''
-        />
+        <NavButton title='Menu' customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} icon={<AiOutlineMenu />} color={currentColor} dotColor='' />
 
         <div className='flex'>
-          <NavButton title='Cart' customFunc={() => handleClick('cart')} icon={<FiShoppingCart />} color='' />
-          <NavButton title='Chat' customFunc={() => handleClick('chat')} icon={<BsChatLeft />} color='' dotColor='#03C9D7' />
-          <NavButton
-            title='Notifications'
-            customFunc={() => handleClick('notification')}
-            icon={<RiNotification3Line />}
-            color=''
-            dotColor=''
-          />
+          <NavButton title='Cart' customFunc={() => handleClick('cart')} icon={<FiShoppingCart />} color={currentColor} />
+          <NavButton title='Chat' customFunc={() => handleClick('chat')} icon={<BsChatLeft />} color={currentColor} dotColor='#03C9D7' />
+          <NavButton title='Notifications' customFunc={() => handleClick('notification')} icon={<RiNotification3Line />} color={currentColor} dotColor='' />
           <TooltipComponent content='Profile' position='BottomCenter'>
             <div
               className='flex item-center gap-2 cursor-pointer p-1 hover:bg-flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg'
