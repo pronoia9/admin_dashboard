@@ -44,3 +44,7 @@ const Stacked = ({ width, height }) => {
 };
 
 export default Stacked;
+
+// Resources:
+// https://ej2.syncfusion.com/react/documentation/chart/legend/#set-the-label-color-based-on-series-color
+// https://stackoverflow.com/questions/56655390/how-to-change-color-of-svg-circle
