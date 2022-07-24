@@ -143,7 +143,29 @@
   }
 }
 
+// DARK MODE STYLES
+
 .dark {
+  .e-grid,
+  #calendar-page,
+  #kanban-page,
+  #editor-page,
+  #color_picker-page {
+    * {
+      color: #fff;
+    }
+  }
+  .e-grid {
+    .e-rowcell,
+    .e-tbar-btn-text,
+    .e-btn-icon,
+    .e-delete,
+    .e-icons,
+    .e-icon-left {
+      color: #fff !important;
+    }
+  }
+
   // grid styles
 
   // div {
@@ -153,10 +175,7 @@
   // }
 
   .e-grid {
-    *,
-    span,
-    svg {
-      color: #fff !important;
+    * {
       border-color: #555;
       border-color: #555;
     }
@@ -252,10 +271,6 @@
   // calendar styles
 
   #calendar-page {
-    * {
-      color: #fff;
-    }
-
     .e-control,
     .e-schedule,
     .e-keyboard,
@@ -312,10 +327,6 @@
   // kanban styles
 
   #kanban-page {
-    * {
-      color: #fff;
-    }
-
     .e-kanban-table,
     .e-header-table,
     .e-header-cells,
@@ -328,6 +339,46 @@
     .e-lib,
     .e-draggable {
       background: #33373e;
+    }
+  }
+
+  #editor-page {
+    .e-toolbar-wrapper,
+    .e-rte-toolbar,
+    .e-control,
+    .e-toolbar,
+    .e-extended-toolbar,
+    .e-toolbar-items,
+    .e-toolbar-item,
+    .e-tbtn-align,
+    .e-tbar-btn,
+    .e-btn,
+    .e-icon-btn {
+      background: #20232a;
+    }
+
+    .e-rte-content {
+      // background: #33373e;
+      background: #20232a;
+    }
+  }
+
+  #color_picker-page {
+    #inline-pallet,
+    #inline-picker {
+      background: #20232a;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+    .e-slider-preview,
+    .e-selected-value {
+      background: #20232a;
+    }
+  }
+
+  #header-component {
+    p:first-child {
+      color: rgb(156 163 175 / var(--tw-text-opacity));
     }
   }
 }
