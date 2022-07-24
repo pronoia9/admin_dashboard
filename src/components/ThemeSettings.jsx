@@ -29,12 +29,28 @@ const ThemeSettings = () => {
           <p className='font-semibold text-xl '>Theme Option</p>
           {/* light mode */}
           <div className='mt-4'>
-            <input type='radio' id='light' name='theme' value='Light' className='cursor-pointer' onChange={setMode} checked={currentMode === 'Light'} />
+            <input
+              type='radio'
+              id='light'
+              name='theme'
+              value='Light'
+              className='cursor-pointer'
+              onChange={setMode}
+              checked={currentMode === 'Light'}
+            />
             <label htmlFor='light' className='ml-2 text-md cursor-pointer'>Light</label>
           </div>
           {/* dark mode */}
           <div className='mt-2'>
-            <input type='radio' id='dark' name='theme' value='Dark' onChange={setMode} className='cursor-pointer' checked={currentMode === 'Dark'} />
+            <input
+              type='radio'
+              id='dark'
+              name='theme'
+              value='Dark'
+              onChange={setMode}
+              className='cursor-pointer'
+              checked={currentMode === 'Dark'}
+            />
             <label htmlFor='dark' className='ml-2 text-md cursor-pointer'>Dark</label>
           </div>
         </div>

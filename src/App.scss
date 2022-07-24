@@ -1,0 +1,313 @@
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
+.sidebar {
+  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+}
+
+.nav-item,
+.navbar {
+  z-index: 10000;
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    z-index: 10000000;
+  }
+}
+
+.e-dlg-center-center,
+.e-quick-popup-wrapper.e-device {
+  z-index: 1000000 !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* color-picker style  */
+
+#preview {
+  background: transparent url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png') no-repeat;
+  display: inline-block;
+  height: 80px;
+  margin: 10px 0;
+  min-width: 300px;
+  max-width: 600px;
+  background-color: #008000;
+}
+
+.e-input-group {
+  &:not(.e-float-icon-left),
+  &.e-success:not(.e-float-icon-left),
+  &.e-warning:not(.e-float-icon-left),
+  &.e-error:not(.e-float-icon-left) {
+    border: none;
+  }
+
+  &.e-control-wrapper {
+    &:not(.e-float-icon-left),
+    &.e-success:not(.e-float-icon-left),
+    &.e-warning:not(.e-float-icon-left),
+    &.e-error:not(.e-float-icon-left) {
+      border: none;
+    }
+  }
+}
+
+// calendar styles
+
+.custom-class-1A97F5.e-schedule {
+  .e-vertical-view {
+    .e-all-day-appointment-wrapper .e-appointment,
+    .e-day-wrapper .e-appointment {
+      background: #1a97f5;
+    }
+  }
+
+  .e-month-view .e-appointment {
+    background: #1a97f5;
+  }
+}
+
+.custom-class-03C9D7.e-schedule {
+  .e-vertical-view {
+    .e-all-day-appointment-wrapper .e-appointment,
+    .e-day-wrapper .e-appointment {
+      background: #03c9d7;
+    }
+  }
+
+  .e-month-view .e-appointment {
+    background: #03c9d7;
+  }
+}
+
+.custom-class-7352FF.e-schedule {
+  .e-vertical-view {
+    .e-all-day-appointment-wrapper .e-appointment,
+    .e-day-wrapper .e-appointment {
+      background: #7352ff;
+    }
+  }
+
+  .e-month-view .e-appointment {
+    background: #7352ff;
+  }
+}
+
+.custom-class-FF5C8E.e-schedule {
+  .e-vertical-view {
+    .e-all-day-appointment-wrapper .e-appointment,
+    .e-day-wrapper .e-appointment {
+      background: #ff5c8e;
+    }
+  }
+
+  .e-month-view .e-appointment {
+    background: #ff5c8e;
+  }
+}
+
+.custom-class-1E4DB7.e-schedule {
+  .e-vertical-view {
+    .e-all-day-appointment-wrapper .e-appointment,
+    .e-day-wrapper .e-appointment {
+      background: #1e4db7;
+    }
+  }
+
+  .e-month-view .e-appointment {
+    background: #1e4db7;
+  }
+}
+
+.custom-class-FB9678.e-schedule {
+  .e-vertical-view {
+    .e-all-day-appointment-wrapper .e-appointment,
+    .e-day-wrapper .e-appointment {
+      background: #fb9678;
+    }
+  }
+
+  .e-month-view .e-appointment {
+    background: #fb9678;
+  }
+}
+
+// grid styles
+
+// div {
+//   &.e-grid {
+//     border-radius: 1.5rem;
+//   }
+// }
+
+.dark {
+  .e-grid {
+    *,
+    span,
+    svg {
+      color: #fff !important;
+      border-color: #555;
+      border-color: #555;
+    }
+
+    border-color: #555;
+    border-color: #555;
+
+    .e-table,
+    .e-pager,
+    .e-toolbar-items,
+    .e-tbar-pos,
+    .e-control,
+    .e-toolbar,
+    .e-lib,
+    .e-keyboard {
+      background: #33373e;
+    }
+
+    input {
+      &::placeholder {
+        color: #fff;
+      }
+    }
+
+    th,
+    .e-gridpager,
+    .e-control,
+    .e-pager,
+    .e-lib,
+    .e-pagercontainer,
+    .e-prevpagedisabled,
+    .e-prevpage,
+    .e-nextpage,
+    .e-nextpagedisabled,
+    .e-lastpagedisabled,
+    .e-lastpage,
+    .e-firstpage,
+    .e-firstpagedisabled,
+    .e-numericitem,
+    .e-toolbar-items,
+    .e-tbar-pos {
+      background: #20232a;
+    }
+
+    .e-currentitem {
+      background: #4b4d51;
+    }
+
+    .e-inline-edit {
+      col {
+        background: #20232a;
+      }
+      .e-rowcell {
+        span {
+          color: #ddd;
+        }
+      }
+    }
+
+    tbody {
+      .e-row {
+        &.e-altrow {
+          background: #40454e;
+        }
+
+        .e-selectionbackground {
+          color: black !important;
+        }
+
+        &:hover,
+        &:focus,
+        &:target,
+        &:active,
+        [aria-selected='true'] {
+          background: whitesmoke;
+          *,
+          p,
+          span,
+          svg {
+            color: black !important;
+          }
+        }
+
+        .e-inline-edit {
+          * {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// calendar styles
+
+.dark {
+  #calendar-page {
+    * {
+      color: #fff;
+    }
+
+    .e-control,
+    .e-schedule,
+    .e-keyboard,
+    .e-toolbar,
+    .e-toolbar-left,
+    .e-toolbar-center,
+    .e-toolbar-right,
+    .e-toolbar-items,
+    .e-tbar-pos,
+    .e-time-slots,
+    .e-header-cells,
+    .e-disable-dates {
+      background: #20232a;
+    }
+
+    .e-work-cells,
+    .e-alternate-cells {
+      background: #33373e;
+      border-color: #999;
+    }
+
+    .e-time-slots {
+      border-color: #999;
+    }
+
+    .e-schedule-table {
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            td {
+              border-bottom-color: #00000000;
+            }
+          }
+        }
+      }
+    }
+
+    .mt-5 table tbody {
+      background: #33373e;
+      .e-float-input,
+      .e-control-wrapper,
+      .e-input-group,
+      .e-date-wrapper,
+      .e-valid-input,
+      .e-control,
+      .e-datepicker,
+      .e-lib,
+      .e-keyboard {
+        background: #33373e;
+      }
+    }
+  }
+}
