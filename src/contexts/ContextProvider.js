@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-import { setChart } from '@syncfusion/ej2/spreadsheet';
 
 const StateContext = createContext();
 
@@ -62,7 +61,7 @@ export const ContextProvider = ({ children }) => {
     <StateContext.Provider
       value={{
         activeMenu, setActiveMenu,
-        isClicked, setIsClicked, handleClick,
+        isClicked, setIsClicked, handleClick, initialState,
         screenSize, setScreenSize,
         currentColor, setCurrentColor, setColor,
         currentMode, setCurrentMode, setMode,
