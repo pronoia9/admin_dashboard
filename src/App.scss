@@ -143,15 +143,15 @@
   }
 }
 
-// grid styles
-
-// div {
-//   &.e-grid {
-//     border-radius: 1.5rem;
-//   }
-// }
-
 .dark {
+  // grid styles
+
+  // div {
+  //   &.e-grid {
+  //     border-radius: 1.5rem;
+  //   }
+  // }
+
   .e-grid {
     *,
     span,
@@ -248,11 +248,9 @@
       }
     }
   }
-}
 
-// calendar styles
+  // calendar styles
 
-.dark {
   #calendar-page {
     * {
       color: #fff;
@@ -308,6 +306,28 @@
       .e-keyboard {
         background: #33373e;
       }
+    }
+  }
+
+  // kanban styles
+
+  #kanban-page {
+    * {
+      color: #fff;
+    }
+
+    .e-kanban-table,
+    .e-header-table,
+    .e-header-cells,
+    .e-toggle-header,
+    td {
+      background: #20232a;
+    }
+
+    .e-card,
+    .e-lib,
+    .e-draggable {
+      background: #33373e;
     }
   }
 }
