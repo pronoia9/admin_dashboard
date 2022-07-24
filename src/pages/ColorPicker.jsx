@@ -13,12 +13,12 @@ const ColorPicker = () => (
       {/* pen */}
       <div id='preview' />
       <div className='flex justify-center items-center gap-20 flex-wrap'>
-        <div>
+        <div id='inline-pallet'>
           <p className='text-2xl font-semibold mt-2 mb-4'>Inline Pallete</p>
           <CustomColorPicker id='inline-palette' mode='Palette' />
         </div>
-        <div>
-          <p className='text-2xl font-semibold mt-2 mb-4'>Inline Picker</p>
+        <div id='inline-picker'>
+          <p id='text-2xl font-semibold mt-2 mb-4'>Inline Picker</p>
           <CustomColorPicker id='inline-picker' mode='Picker' />
         </div>
       </div>
